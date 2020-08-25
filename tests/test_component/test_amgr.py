@@ -295,33 +295,6 @@ def test_amgr_run_mock():
 
 # ------------------------------------------------------------------------------
 #
-def test_amgr_resource_terminate():
-
-    res_dict = {'resource': 'xsede.supermic',
-                'project' : 'TG-MCB090174',
-                'walltime': 30,
-                'cpus'    : 20}
-
-    from radical.entk.execman.rp import TaskManager
-
-    amgr = Amgr(rts='radical.pilot', hostname=host, port=port,
-            username=username, password=password)
-    amgr.resource_desc = res_dict
-
-    amgr._setup_mqs()
-    amgr._rmq_cleanup  = True
-    amgr._task_manager = TaskManager(sid='test',
-                                     pending_queue=list(),
-                                     completed_queue=list(),
-                                     rmgr=amgr._rmgr,
-                                     rmq_conn_params=amgr._rmq_conn_params)
-
-    amgr.resource_terminate()
-    # FIXME: what is tested (asserted) here?  What happens if terminate fails?
-
-
-# ------------------------------------------------------------------------------
-#
 def test_amgr_terminate():
 
     res_dict = {'resource': 'xsede.supermic',
