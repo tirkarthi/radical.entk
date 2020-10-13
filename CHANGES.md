@@ -6,6 +6,11 @@
     https://github.com/radical-cybertools/radical.entk/ \
             issues?q=is%3Aissue+is%3Aopen+
 
+1.5.5  Release                                                        2020-10-13
+--------------------------------------------------------------------------------
+
+  - reuse rmq conn in unit_state_cb #483
+ 
 
 1.5.1  Release                                                        2020-09-01
 --------------------------------------------------------------------------------
